@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dqnmcyal0t2c1"]
+
+[ext_resource type="Texture2D" uid="uid://b3e88rspysl58" path="res://Assets/icon.svg" id="1_lbgm6"]
+[ext_resource type="Script" uid="uid://cemc8ufs833a2" path="res://Scripts/clicker.gd" id="2_gyk0w"]
+
+[node name="Clicker" type="Button" unique_id=2001469363]
+offset_left = -69.0
+offset_top = -74.0
+offset_right = 67.0
+offset_bottom = 62.0
+icon = ExtResource("1_lbgm6")
+script = ExtResource("2_gyk0w")
+
+[node name="UpgradeButton" type="Button" parent="." unique_id=224801062]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 148.0
+offset_right = 134.0
+offset_bottom = 183.0
+text = "Upgrade"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

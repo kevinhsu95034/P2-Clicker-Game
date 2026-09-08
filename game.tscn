@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c7q8m1qp35lhy"]
 
-[ext_resource type="Script" path="res://game_manager.gd" id="1_80nbo"]
-[ext_resource type="Texture2D" uid="uid://b3e88rspysl58" path="res://icon.svg" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://che5mh73w5t4y" path="res://Scripts/game_manager.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://dqnmcyal0t2c1" path="res://Scenes/clicker.tscn" id="2_e2o6t"]
 
-[node name="Game" type="Control" unique_id=1738239276]
+[node name="GameManager" type="Control" unique_id=1738239276]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,31 +11,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_80nbo")
-clicker_strength = 20
 
-[node name="ClickerButton" type="Button" parent="." unique_id=1130143184]
+[node name="ClickerButton" parent="." unique_id=2001469363 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_e2o6t")]
 layout_mode = 0
-offset_left = 108.0
-offset_top = 56.0
-offset_right = 244.0
-offset_bottom = 192.0
-icon = ExtResource("1_e2o6t")
-
-[node name="UpgradeButton" type="Button" parent="ClickerButton" unique_id=1130343867]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 152.0
-offset_right = 139.0
-offset_bottom = 187.0
-text = "Upgrade"
+offset_left = 104.0
+offset_top = 89.0
+offset_right = 240.0
+offset_bottom = 225.0
+game_manager = NodePath("..")
 
 [node name="CoinLabel" type="Label" parent="." unique_id=908039961]
 layout_mode = 0
-offset_left = 323.0
-offset_top = 76.0
-offset_right = 426.0
-offset_bottom = 99.0
+offset_left = 338.0
+offset_top = 99.0
+offset_right = 441.0
+offset_bottom = 122.0
 text = "Coin: 0"
 
-[connection signal="pressed" from="ClickerButton" to="." method="_on_button_down"]
-[connection signal="pressed" from="ClickerButton/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="coin_generated" from="ClickerButton" to="." method="_on_clicker_button_coin_generated"]

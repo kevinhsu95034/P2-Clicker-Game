@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="P2 Styled Clicker"
-run/main_scene="uid://vctk3uv2yg8n"
+run/main_scene="uid://c7q8m1qp35lhy"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [physics]
 
